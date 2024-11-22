@@ -52,17 +52,14 @@ restaurantController.processSignup = async (
     console.log("req.body::", req.body);
 
     const file = req.file;
-    // console.log("file:", file);
 
-    // throw new Error("Forced Quit");
     if (!file)
       throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
 
     const newMember: MemberInput = req.body;
     newMember.memberImage = file?.path;
-    newMember.memberType = MemberType.RESTAURANT;
+    newMember.memberType = MemberType.ADMIN;
     const result = await memberService.processSignup(newMember);
-    //TODO: Sessions Authentication
 
     req.session.member = result;
     req.session.save(function () {
@@ -87,8 +84,6 @@ restaurantController.processLogin = async (
   try {
     console.log("processLogin");
     console.log("req.body", req.body);
-
-    // throw new Error("FORCED STOP!"); testt
 
     const input: LoginInput = req.body;
     const result = await memberService.processLogin(input);
@@ -132,6 +127,7 @@ restaurantController.getUsers = async (req: Request, res: Response) => {
     res.redirect("/admin/login");
   }
 };
+
 restaurantController.updateChosenUser = async (req: Request, res: Response) => {
   try {
     console.log("updateChosenUser");
@@ -164,7 +160,7 @@ restaurantController.verifyRestaurant = (
   res: Response,
   next: NextFunction
 ) => {
-  if (req.session?.member?.memberType === MemberType.RESTAURANT) {
+  if (req.session?.member?.memberType === MemberType.ADMIN) {
     req.member = req.session.member;
     next();
   } else {
