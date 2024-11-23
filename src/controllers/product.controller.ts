@@ -5,7 +5,6 @@ import { ProductInput, ProductInquiry } from "../libs/types/product";
 import { AdminRequest, ExtendedRequest } from "../libs/types/member";
 import { ProductCollection } from "../libs/enums/product.enum";
 import ProductService from "../models/product.service";
-// import { AdminRequest } from "../libs/types/member"; // req: AdminRequest - test un
 
 const productService = new ProductService();
 
@@ -67,7 +66,6 @@ productController.getAllProducts = async (req: Request, res: Response) => {
     console.log("getAllProducts");
     // console.log("req.member:", req.member);
     const data = await productService.getAllProducts();
-    console.log("products:", data);
 
     res.render("products", { products: data });
   } catch (err) {

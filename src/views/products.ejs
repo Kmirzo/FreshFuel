@@ -7,7 +7,7 @@
     <div class="navigation-menu">
       <ul class="nav justify-content-center">
         <li class="nav-item" style="cursor: pointer">
-          <a class="nav-link active" href="/admin/">Home</a>
+          <a class="nav-link active" href="/admin/" >Home</a>
         </li>
         <li class="nav-item" style="cursor: pointer">
           <a class="nav-link" href="/admin/product/all">Menu</a>
@@ -38,6 +38,7 @@
                 <th scope="col">Product Name</th>
                 <th scope="col">Product Type</th>
                 <th scope="col">Product Volume</th>
+                <th scope="col">Product Calorie</th>
                 <th scope="col">Product Price</th>
                 <th scope="col">Product Left Count</th>
                 <th scope="col">Status</th>
@@ -53,6 +54,7 @@
                 <%= value.productCollection === 'DRINK' ? value.productVolume :
                 value.productSize %>
               </td>
+              <td><%= value.productCalorie %></td>
               <td><%= value.productPrice %></td>
               <td><%= value.productLeftCount %></td>
               <td>
@@ -136,6 +138,16 @@
                 <option value="DRINK">Drink</option>
                 <option value="APPETIZERS">Appetizers</option>
               </select>
+            </div>
+            
+            <div class="half-input" >
+              <label>Product Calorie</label>
+              <input
+                type="number"
+                placeholder="Calorie"
+                name="productCalorie"
+                class="product-left-count"
+              />
             </div>
 
             <div class="half-input" id="product-collection">

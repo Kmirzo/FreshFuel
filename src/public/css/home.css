@@ -1,4 +1,7 @@
 .home-container {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
   position: relative;
   width: auto;
   height: auto;
@@ -6,7 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303f0, #dd6d04, #011c1afc, #7a6868);
+  background: linear-gradient(-45deg, #003b5d, #5f0085, #000000, #000000);
 }
 
 .home-container a {
@@ -14,8 +17,16 @@
   color: #000000;
 }
 
+.home-container .nav-item {
+  transition: 2s;
+}
+.home-container .nav-item:hover {
+  box-shadow: 0 10px 20px 5px #001aff;
+}
+
 .home-container .nav-item a {
-  color: #e3c08d;
+  margin-top: 15px;
+  color: #f3f3e0;
 }
 
 .home-container .nav-item a.disabled {
@@ -25,29 +36,34 @@
 .home-container .navigation-menu {
   position: relative;
   z-index: 10000;
-  color: #efefee;
+  color: #091057;
   font-size: 40px;
   font-family: monospace;
 }
 
 .home-container .animation-frame {
-  position: relative;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 55px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .home-container .animation-wrapper {
   position: relative;
-  width: 775px;
-  height: 775px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: auto;
+  height: auto;
 }
 
 .home-container .sphere-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 580px;
   height: 580px;

@@ -51,6 +51,10 @@ const productSchema = new Schema(
       type: Number,
       default: 0,
     },
+    productCalorie: {
+      type: Number,
+      required: true,
+    },
   },
   { timestamps: true } //UpdatedAt , CreatedAt
 );

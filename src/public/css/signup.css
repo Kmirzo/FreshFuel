@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #003b5d, #5f0085, #000000, #000000);
   animation: gradient 15s ease infinite;
   -webkit-animation: gradient 15s ease infinite;
   background-size: 200% 200%;
@@ -24,8 +24,21 @@
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  background: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  backdrop-filter: blur(15px);
   padding: 25px;
+  transition: 2s;
+}
+.signup-container .signup-frame:hover {
+  box-shadow: 0 0 5px #454b80, 0 0 10px #454b80, 0 0 20px #454b80,
+    0 0 40px #0116d4, 0 0 80px #454b80;
+}
+
+.signup-frame .signup-top span,
+div,
+p {
+  color: #cbdceb;
 }
 
 .signup-container .signup-frame .sign-input-frame {
@@ -105,6 +118,9 @@
   display: flex;
   flex-direction: column;
 }
+.signup-container .media-frame .upload-container .file-input-label {
+  background-color: #33a0ff94;
+}
 
 .signup-container .media-text {
   font-family: "GT Walsheim Pro";
@@ -112,7 +128,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  color: #140342;
+  color: #cbdceb;
 }
 
 .signup-container .file-box input[type="file"] {
@@ -141,7 +157,7 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 26px;
-  color: #ffffff;
+  color: #cbdceb;
 }
 
 .signup-container .file-box .upload-name {
@@ -150,9 +166,13 @@
   width: 85%;
   height: 55px;
   display: flex;
-  background: #ffffff;
+  background: #cbdceb;
   border: 1px solid #dddddd;
   border-radius: 8px 0px 0px 8px;
+}
+.signup-container .signup-frame .signup-btn {
+  background: #33a0ff94;
+  color: #cbdceb;
 }
 
 .signup-container .thumbnail-desc {
@@ -162,7 +182,7 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 26px;
-  color: #4f547b;
+  color: #717171;
 }
 
 /* Background animation */

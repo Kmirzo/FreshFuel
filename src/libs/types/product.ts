@@ -15,6 +15,7 @@ export interface Product {
   productLeftCount: number;
   productSize: ProductSize;
   productVolume: number;
+  productCalorie: number;
   productDesc?: string;
   productImages: string[];
   productViews: number;
@@ -27,6 +28,7 @@ export interface ProductInquiry {
   page: number;
   limit: number;
   productCollection?: ProductCollection;
+  productCalorie?: number;
   search?: string;
 }
 
@@ -38,6 +40,7 @@ export interface ProductInput {
   productLeftCount: number;
   productSize?: ProductSize;
   productVolume?: number;
+  productCalorie?: number;
   productDesc?: string;
   productImages?: string[];
   productViews?: number;
@@ -52,6 +55,7 @@ export interface ProductUpdateInput {
   productLeftCount?: number;
   productSize?: ProductSize;
   productVolume?: number;
+  productCalorie?: number;
   productDesc?: string;
   productImages?: string[];
   productViews?: number;

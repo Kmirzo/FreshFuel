@@ -1,7 +1,7 @@
 {
-  "name": "burak",
+  "name": "freshfuel",
   "version": "1.0.0",
-  "description": "This is Burak project backend",
+  "description": "This is FreshFuel project backend",
   "main": "src/server.ts",
   "scripts": {
     "train": "nodemon train.ts",
