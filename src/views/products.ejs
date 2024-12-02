@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="/css/products.css" />
 
 <body>
+
   <div class="products-container">
     <div class="navigation-menu">
       <ul class="nav justify-content-center">
@@ -31,6 +32,14 @@
           <span class="new-dish-txt" style="margin-bottom: 30px">
             RESTAURANT MENU
           </span>
+
+          <div class="search-input"> <!-- NEW BLOCK START -->
+            
+          </div>
+          <!-- NEW BLOCK END -->
+
+
+
           <table class="table table-bordered table-hover">
             <thead class="thead-light">
               <tr class="thead-light">
@@ -39,6 +48,7 @@
                 <th scope="col">Product Type</th>
                 <th scope="col">Product Volume</th>
                 <th scope="col">Product Calorie</th>
+                <th scope="col">Dietary Info</th>
                 <th scope="col">Product Price</th>
                 <th scope="col">Product Left Count</th>
                 <th scope="col">Status</th>
@@ -55,6 +65,7 @@
                 value.productSize %>
               </td>
               <td><%= value.productCalorie %></td>
+              <td><%= value.productDietaryInfo %></td>
               <td><%= value.productPrice %></td>
               <td><%= value.productLeftCount %></td>
               <td>
@@ -139,16 +150,6 @@
                 <option value="APPETIZERS">Appetizers</option>
               </select>
             </div>
-            
-            <div class="half-input" >
-              <label>Product Calorie</label>
-              <input
-                type="number"
-                placeholder="Calorie"
-                name="productCalorie"
-                class="product-left-count"
-              />
-            </div>
 
             <div class="half-input" id="product-collection">
               <label>Dish Volume</label>
@@ -171,6 +172,27 @@
               </select>
             </div>
           </div>
+          <div class="half-input-frame">
+          <div class="half-input" >
+            <label>Product Calorie</label>
+            <input
+              type="number"
+              placeholder="Calorie"
+              name="productCalorie"
+              class="product-left-count"
+            />
+          </div>
+          <div class="half-input"  id="product-diet">
+            <label>Dietary Information</label>
+            <select name="productDietaryInfo" class="product-diet">
+              <option value="VEGETARIAN">Vegetarian</option>
+              <option value="VEGAN">Vegan</option>
+              <option value="GLUTEN_FREE">Gluten-Free</option>
+              <option value="NON_VEGETARIAN">Non-Vegetarian</option>
+            </select>
+          </div>
+          
+        </div>
           <div class="long-input">
             <label>Product Description</label>
             <textarea name="productDesc" class="product-desc"></textarea>

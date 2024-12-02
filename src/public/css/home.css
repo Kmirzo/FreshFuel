@@ -10,6 +10,9 @@
   flex-direction: column;
   align-items: center;
   background: linear-gradient(-45deg, #003b5d, #5f0085, #000000, #000000);
+  animation: gradient 15s ease infinite;
+  -webkit-animation: gradient 15s ease infinite;
+  background-size: 200% 200%;
 }
 
 .home-container a {
@@ -25,7 +28,7 @@
 }
 
 .home-container .nav-item a {
-  margin-top: 15px;
+  margin-top: 8px;
   color: #f3f3e0;
 }
 
@@ -69,7 +72,31 @@
   height: 580px;
 }
 
-.home-container .sphere path {
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* .home-container .sphere path {
   fill: url(#sphereGradient);
   stroke-width: 1px;
   stroke: rgba(80, 80, 80, 0.35);
@@ -80,4 +107,4 @@
   .sphere path {
     stroke-width: 0.4px;
   }
-}
+} */

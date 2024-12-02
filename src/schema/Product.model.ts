@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import {
+  ProductDietaryInfo,
   ProductCollection,
   ProductSize,
   ProductStatus,
@@ -53,6 +54,11 @@ const productSchema = new Schema(
     },
     productCalorie: {
       type: Number,
+      required: true,
+    },
+    productDietaryInfo: {
+      type: String,
+      enum: ProductDietaryInfo,
       required: true,
     },
   },

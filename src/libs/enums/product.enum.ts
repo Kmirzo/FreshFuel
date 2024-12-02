@@ -22,7 +22,15 @@ export enum ProductStatus {
 export enum ProductCollection {
   DISH = "DISH",
   SALAD = "SALAD",
+  DRINK = "DRINK",
   DESSERT = "DESSERT",
   BEVERAGES = "BEVERAGES",
   APPETIZERS = "APPETIZERS",
+}
+
+export enum ProductDietaryInfo {
+  VEGETARIAN = "VEGETARIAN",
+  VEGAN = "VEGAN",
+  GLUTEN_FREE = "GLUTEN_FREE",
+  NON_VEGETARIAN = "NON_VEGETARIAN",
 }

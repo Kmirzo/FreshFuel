@@ -111,6 +111,8 @@ class ProductService {
 
   public async createNewProduct(input: ProductInput): Promise<Product> {
     try {
+      console.log("++", input);
+
       const result = await this.productModel.create(input);
       console.log("result:", result);
       return result;
@@ -120,6 +122,7 @@ class ProductService {
       throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
     }
   }
+
   public async updateChosenProduct(
     id: string,
     input: ProductUpdateInput
