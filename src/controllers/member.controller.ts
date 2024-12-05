@@ -170,4 +170,20 @@ memberController.retrieveAuth = async (
   }
 };
 
+memberController.getMember = async (req: Request, res: Response) => {
+  try {
+    console.log("getMember");
+
+    const result = await memberService.getMember(req.body.search);
+    console.log("buuuu: ", result);
+
+    res.render("users", { users: result });
+  } catch (err) {
+    console.log("getMember:", err);
+    res.send(
+      `<script>  alert ("${err} "); window.location.replace('/admin/product/all')</script>`
+    );
+  }
+};
+
 export default memberController;

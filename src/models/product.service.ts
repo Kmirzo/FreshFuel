@@ -135,6 +135,16 @@ class ProductService {
     console.log("result:", result);
     return result;
   }
+
+  public async getSearchProduct(input: string): Promise<Product[]> {
+    const result = await this.productModel
+      .find({
+        productName: { $regex: new RegExp(input, "i") },
+      })
+      .exec();
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+    return result;
+  }
 }
 
 export default ProductService;

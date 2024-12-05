@@ -85,3 +85,22 @@ function previewFileHandler(input, order) {
     }
   }
 }
+
+function handleSearch() {
+  if (!searchQuery) {
+    alert("Please enter a search term!");
+    return;
+  }
+
+  // Filtering products based on the search query
+  document.querySelectorAll(".product-item").forEach((item) => {
+    const productName = item
+      .querySelector(".product-name")
+      .textContent.toLowerCase();
+    if (productName.includes(searchQuery.toLowerCase())) {
+      item.style.display = ""; // Show matching items
+    } else {
+      item.style.display = "none"; // Hide non-matching items
+    }
+  });
+}

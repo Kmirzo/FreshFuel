@@ -127,4 +127,18 @@ productController.updateChosenProduct = async (req: Request, res: Response) => {
   }
 };
 
+productController.getSearchProduct = async (req: Request, res: Response) => {
+  try {
+    console.log("getSearchProduct");
+
+    const products = await productService.getSearchProduct(req.body.search);
+
+    res.render("products", { products });
+  } catch (err) {
+    console.log("getSearchProduct:", err);
+    res.send(
+      `<script>  alert ("${err} "); window.location.replace('/admin/product/all')</script>`
+    );
+  }
+};
 export default productController;

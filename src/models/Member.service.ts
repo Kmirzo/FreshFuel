@@ -196,6 +196,19 @@ class MemberService {
     if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
     return result;
   }
+
+  public async getMember(input: string): Promise<Member[]> {
+    console.log("passed here 1");
+
+    const result = await this.memberModel
+      .find({
+        memberNick: { $regex: new RegExp(input, "i") },
+      })
+      .exec();
+    console.log("passed here 2");
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+    return result;
+  }
 }
 
 export default MemberService;

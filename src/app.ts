@@ -10,6 +10,7 @@ import { MORGAN_FORMAT } from "./libs/config";
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
 import { T } from "./libs/types/common";
+import { Product } from "./libs/types/product";
 
 const MongoDBStore = ConnectMongoDB(session);
 const store = new MongoDBStore({
@@ -51,6 +52,14 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 /* 4-ROUTERS */
+
+// routerAdmin.post("/roduct/search", (req, res) => {
+//   const query = req.body.query.toLowerCase();
+//   const filteredProducts = Product.filter((product: { productName: string }) =>
+//     product.productName.toLowerCase().includes(query)
+//   );
+//   res.render("admin/products", { products: filteredProducts });
+// });
 
 // BSSR: EJS
 app.use("/admin", routerAdmin); //BSSR  // Traditional Api // EJS

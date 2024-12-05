@@ -33,9 +33,19 @@
             RESTAURANT MENU
           </span>
 
-          <div class="search-input"> <!-- NEW BLOCK START -->
-            
-          </div>
+           <!-- NEW BLOCK START -->
+            <form action="http://localhost:3077/admin/product/all" method="POST" class="searh-form" style="display: flex; gap: 10px; align-items: center; margin-left: 1050px; margin-bottom: 15px;">
+              <input
+                type="text"
+                name="search"
+                placeholder="Type here..." 
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 4px; outline: none;"
+              />
+              <button type="submit" style="padding: 5px 10px; border: none; background-color: #007bff; color: white; border-radius: 4px; cursor: pointer;">
+                Search
+              </button>
+            </form>
+          
           <!-- NEW BLOCK END -->
 
 

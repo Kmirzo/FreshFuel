@@ -51,6 +51,23 @@
           <span class="header-name" style="margin-bottom: 30px"
             >All Users List</span
           >
+
+
+           <!-- NEW BLOCK START -->
+           <form action="http://localhost:3077/admin/user/all" method="POST" class="searh-form" style="display: flex; gap: 10px; align-items: center; margin-left: 1050px; margin-bottom: 15px;">
+            <input
+              type="text"
+              name="search"
+              placeholder="Search for a member..." 
+              style="padding: 5px; border: 1px solid #ccc; border-radius: 4px; outline: none;"
+            />
+            <button type="submit" style="padding: 5px 10px; border: none; background-color: #007bff; color: white; border-radius: 4px; cursor: pointer;">
+              Search
+            </button>
+          </form>
+        
+        <!-- NEW BLOCK END -->
+
           <table class="table table-hover table-sm">
             <thead class="thead-light">
               <tr class="thead-light">

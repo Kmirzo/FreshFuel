@@ -3,6 +3,7 @@ const routerAdmin = express.Router();
 import restaurantController from "./controllers/restaurant.controller";
 import productController from "./controllers/product.controller";
 import makeUploader from "./libs/utils/uploader";
+import memberController from "./controllers/member.controller";
 
 // Restaurant member
 routerAdmin.get("/", restaurantController.goHome);
@@ -18,6 +19,12 @@ routerAdmin
   );
 routerAdmin.get("/logout", restaurantController.logout);
 routerAdmin.get("/check-me", restaurantController.chechAuthSession);
+
+routerAdmin.post(
+  "/product/all",
+  restaurantController.verifyRestaurant,
+  productController.getSearchProduct
+);
 
 //Product
 routerAdmin.get(
@@ -44,6 +51,13 @@ routerAdmin.get(
   restaurantController.verifyRestaurant,
   restaurantController.getUsers
 );
+
+routerAdmin.post(
+  "/user/all",
+  restaurantController.verifyRestaurant,
+  memberController.getMember
+);
+
 routerAdmin.post(
   "/user/edit",
   restaurantController.verifyRestaurant,
