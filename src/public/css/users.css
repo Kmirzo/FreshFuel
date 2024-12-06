@@ -17,10 +17,12 @@
 
 .users-container .nav-item a {
   color: #f3f3e0;
-  transition: 2s;
+  transition: text-shadow 1s ease, color 1s ease;
 }
 .users-container .nav-item a:hover {
-  box-shadow: 0 10px 20px 5px #001aff;
+  color: #00bfff; /* Light blue text */
+  text-shadow: 0 0 5px #00bfff, 0 0 10px #1e90ff, 0 0 20px #e066ff,
+    0 0 30px #ffffff;
 }
 
 .users-container .nav-item a.disabled {

@@ -21,10 +21,11 @@
 }
 
 .home-container .nav-item {
-  transition: 2s;
+  transition: text-shadow 1s ease, color 1s ease;
 }
 .home-container .nav-item:hover {
-  box-shadow: 0 10px 20px 5px #001aff;
+  text-shadow: 0 0 5px #00bfff, 0 0 10px #1e90ff, 0 0 20px #e066ff,
+    0 0 30px #ffffff;
 }
 
 .home-container .nav-item a {
